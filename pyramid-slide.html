@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #pyramid {
+            line-height: 0;
+            font-size: 25px;
+            color: purple;
+        }
+
+        body {
+            font-family: "Courier New", monospace;
+            text-align: center;
+            background-color: #F8F8F8;
+        }
+
+        h1 {
+            background-color: purple;
+            color: #E0E0E0;
+            padding: 50px;
+        }
+
+        .indiv {
+            background-color: #E0E0E0;
+            border: 1px solid purple;
+            border-radius: 10px 10px 10px 10px;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        label {
+            font-size: 12px;
+        }
+
+        #demo {
+            font-weight: bold;
+            font-size: 14px
+        }
+
+        select{
+            background: #E0E0E0;
+            font-size: 14px
+        }
+
+        .flex-container {
+            display: -webkit-flex;
+            display: flex;
+            align-items: center;
+            background-color: #C0C0C0;
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        .flex-item {
+            width: 50%;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pyramid Slide</h1>
+    <br>
+    <div class="indiv">
+    <form id="draw-form">
+        <div class="flex-container">
+        <div class="flex-item">
+        <label>
+            Brick Symbol:
+            <select id="brick-type" onchange="drawPyramid()"/>
+                <option value="#">#</option>
+                <option value="@">@</option>
+                <option value="X">X</option>
+                <option value="$">$</option>
+            </select>
+        </label>
+        </div>
+        <div class="flex-item">
+        <label>
+            How high?
+            <input type="range" id="height" min="1" max="20" oninput="drawPyramid()"/>
+            <span id="demo"></span>
+        </label>
+        </div>
+        </div>
+    </form>
+
+    <br><br>
+
+    <div id="pyramid"></div>
+    </div>
+
+    <script src="pyramid-slide.js"></script>
+</body>
+</html>
